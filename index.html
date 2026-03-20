@@ -401,8 +401,10 @@
     transition: opacity 0.3s;
   }
 
-  .project-card:hover { border-color: rgba(192,132,252,0.3); transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-  .project-card:hover::after { opacity: 1; }
+  .project-card:hover { border-color: rgba(192,132,252,0.3); }
+  a.project-card-link { text-decoration: none; color: inherit; display: block; }
+  a.project-card-link .project-card { transition: all 0.3s; }
+
 
   .project-header {
     display: flex;
@@ -623,7 +625,7 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">JG.DEV</div>
+
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -711,15 +713,15 @@
     </div>
     <div class="skills-grid">
       <div class="skill-card">
-        <div class="skill-icon">⚙️</div>
-        <div class="skill-title">Systems Programming</div>
+        <div class="skill-icon">💻</div>
+        <div class="skill-title">Programming Languages</div>
         <div class="skill-tags">
           <span class="tag">C</span>
           <span class="tag">C++</span>
-          <span class="tag">Linked Lists</span>
-          <span class="tag">Vectors</span>
-          <span class="tag">fstream</span>
-          <span class="tag">RAD Studio</span>
+          <span class="tag">Java</span>
+          <span class="tag">Python</span>
+          <span class="tag">C#</span>
+          <span class="tag">HTML</span>
         </div>
       </div>
       <div class="skill-card">
@@ -729,8 +731,8 @@
           <span class="tag purple">Unity 2D/3D</span>
           <span class="tag purple">C# Scripting</span>
           <span class="tag purple">Game Loop</span>
-          <span class="tag purple">Asset Management</span>
-          <span class="tag purple">Performance Opt.</span>
+          <span class="tag purple">Unity Animator</span>
+          <span class="tag purple">Physics 2D</span>
         </div>
       </div>
       <div class="skill-card">
@@ -774,53 +776,59 @@
 
       <div class="project-card">
         <div class="project-header">
+          <div class="project-emoji">🐷</div>
+          <div style="display:flex;gap:8px;">
+            <a href="https://jazgonzalez.itch.io/2d-coin-collector-game" target="_blank" class="project-link" style="background:rgba(250,84,28,0.1);border-color:rgba(250,84,28,0.3);color:#fa541c;">🎮 Play</a>
+            <a href="https://github.com/jazgonzalez/2D-Game" target="_blank" class="project-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub</a>
+          </div>
+        </div>
+        <div class="project-title">2D Coin Collector Game</div>
+        <div class="project-desc">A fully playable 2D game in Unity where a pig character navigates levels collecting coins, with a complete game loop, lives system, sound effects, and character animations.</div>
+        <ul class="project-bullets">
+          <li>Designed full game loop: coin collection, life system, win/lose conditions and level progression in C#.</li>
+          <li>Integrated Unity Animator with idle, run, jump and death states with smooth state machine transitions.</li>
+          <li>Added spatial audio system for coin pickups, damage and game events.</li>
+        </ul>
+        <div class="project-stack">
+          <span class="tag purple">Unity 2D</span><span class="tag purple">C#</span><span class="tag purple">Animator</span><span class="tag purple">Physics 2D</span><span class="tag pink">Audio System</span><span class="tag">Game Loop</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
           <div class="project-emoji">🃏</div>
-          <a href="https://github.com/jazgonzalez/java-blackjack-game" target="_blank" class="project-link">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub
-          </a>
+          <a href="https://github.com/jazgonzalez/java-blackjack-game" target="_blank" class="project-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub</a>
         </div>
         <div class="project-title">Java Blackjack GUI Game</div>
         <div class="project-desc">A fully interactive Blackjack game with OOP architecture, custom animations, dealer AI, and dynamic theming — built with Java Swing/AWT.</div>
         <ul class="project-bullets">
-          <li>Full OOP design: Dealer inherits Player, Card/Deck/Hand apply composition and encapsulation</li>
-          <li>Synchronized card animation queue + runtime theme toggling (Classic / Xmas)</li>
-          <li>Dealer AI with casino rules (draw until 17) and automatic Ace value adjustment</li>
+          <li>Full OOP design: Dealer inherits Player, Card/Deck/Hand apply composition and encapsulation.</li>
+          <li>Synchronized card animation queue + runtime theme toggling (Classic / Xmas).</li>
+          <li>Dealer AI with casino rules (draw until 17) and automatic Ace value adjustment.</li>
         </ul>
         <div class="project-stack">
-          <span class="tag">Java</span>
-          <span class="tag">Swing/AWT</span>
-          <span class="tag pink">OOP</span>
-          <span class="tag purple">Game Logic</span>
-          <span class="tag">Eclipse</span>
+          <span class="tag">Java</span><span class="tag">Swing/AWT</span><span class="tag pink">OOP</span><span class="tag purple">Game Logic</span><span class="tag">Eclipse</span>
         </div>
       </div>
 
       <div class="project-card">
         <div class="project-header">
           <div class="project-emoji">🏫</div>
-          <a href="https://github.com/jazgonzalez/UPTP-Virtual" target="_blank" class="project-link">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub
-          </a>
+          <a href="https://github.com/jazgonzalez/UPTP-Virtual" target="_blank" class="project-link"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub</a>
         </div>
         <div class="project-title">UPTP Virtual — Academic Platform</div>
-        <div class="project-desc">A C++ desktop application replicating institutional LMS functionality (like Canvas/Sapientia) with role-based access, dynamic data structures, and file persistence.</div>
+        <div class="project-desc">A C++ desktop application replicating institutional LMS functionality with role-based access, dynamic data structures, and file persistence.</div>
         <ul class="project-bullets">
-          <li>Role-based access control for Student and Faculty with secure authentication</li>
-          <li>Linked Lists & Vectors for dynamic schedule/grade management, fstream for persistence</li>
-          <li>Modular C++ architecture across login.cpp, hora.cpp, proyecto.cpp using FireMonkey FMX</li>
+          <li>Role-based access control for Student and Faculty with secure authentication.</li>
+          <li>Linked Lists & Vectors for dynamic data management, fstream for file persistence.</li>
+          <li>Modular C++ architecture across login.cpp, hora.cpp, proyecto.cpp using FireMonkey FMX.</li>
         </ul>
         <div class="project-stack">
-          <span class="tag">C++</span>
-          <span class="tag">FireMonkey FMX</span>
-          <span class="tag">RAD Studio 12</span>
-          <span class="tag pink">OOP</span>
-          <span class="tag">Data Structures</span>
+          <span class="tag">C++</span><span class="tag">FireMonkey FMX</span><span class="tag">RAD Studio 12</span><span class="tag pink">OOP</span><span class="tag">Data Structures</span>
         </div>
       </div>
 
-    </div>
+    </div>    </div>
   </div>
 </section>
 
@@ -835,7 +843,7 @@
     </div>
     <div class="cv-card">
       <div>
-        <div class="cv-title">Jazmin A. Gonzalez Cabriza</div>
+        <div class="cv-title">Jazmin Gonzalez</div>
         <p class="cv-desc">My full resume includes education, technical skills, projects, awards, and language proficiency — formatted and ready to send to recruiters.</p>
         <div class="cv-highlights">
           <div class="cv-item"><span>✦</span><span>B.S. Computer Science — NTUST, Taiwan (7th semester)</span></div>
@@ -845,13 +853,10 @@
         </div>
         <div style="display:flex; gap: 12px; flex-wrap: wrap;">
           <a href="Jazmin_Gonzalez_CV.pdf" download class="btn btn-primary">⬇ Download CV (PDF)</a>
-          <a href="https://github.com/jazgonzalez" target="_blank" class="btn btn-outline">View GitHub Profile</a>
+
         </div>
       </div>
-      <div class="cv-visual">
-        <div class="cv-icon-wrap">📄</div>
-        <p style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;">1-page · English</p>
-      </div>
+
     </div>
   </div>
 </section>
@@ -919,7 +924,7 @@
   .reveal-right.visible { opacity: 1; transform: translateX(0); }
   .typing-cursor::after { content: "|"; animation: blink 1s step-end infinite; color: #c084fc; }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-  .project-card { transform-style: preserve-3d; will-change: transform; }
+
   h1:hover .name-highlight { animation: glitch 0.3s ease; }
   @keyframes glitch {
     0%{transform:translate(0)} 20%{transform:translate(-2px,1px)}
@@ -958,14 +963,7 @@
     bo.observe(bc);
   }
 
-  document.querySelectorAll(".project-card").forEach(card=>{
-    card.addEventListener("mousemove",e=>{
-      const r=card.getBoundingClientRect();
-      const x=(e.clientX-r.left)/r.width-0.5, y=(e.clientY-r.top)/r.height-0.5;
-      card.style.transform=`perspective(600px) rotateY(${x*8}deg) rotateX(${-y*8}deg) translateY(-6px)`;
-    });
-    card.addEventListener("mouseleave",()=>card.style.transform="perspective(600px) rotateY(0) rotateX(0) translateY(0)");
-  });
+
 
   const tag=document.querySelector(".hero-tag");
   if(tag){
