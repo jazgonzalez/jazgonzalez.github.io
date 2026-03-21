@@ -399,6 +399,7 @@
     background: linear-gradient(135deg, rgba(192,132,252,0.04), rgba(167,139,250,0.04));
     opacity: 0;
     transition: opacity 0.3s;
+    pointer-events: none;
   }
 
   .project-card:hover { border-color: rgba(192,132,252,0.3); }
@@ -428,6 +429,8 @@
     border-radius: 6px;
     transition: all 0.2s;
     letter-spacing: 0.05em;
+    position: relative;
+    z-index: 2;
   }
   .project-link:hover { color: var(--accent); border-color: var(--accent); }
 
@@ -904,18 +907,10 @@
 </footer>
 
 
-<!-- CUSTOM CURSOR -->
-<div id="cursor-dot"></div>
 
 
 <style>
-  * { cursor: none !important; }
-  #cursor-dot {
-    position: fixed; width: 10px; height: 10px;
-    background: #c084fc; border-radius: 50%;
-    pointer-events: none; z-index: 9999;
-    transform: translate(-50%, -50%);
-  }
+
   .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -940,10 +935,7 @@
 </style>
 
 <script>
-  const dot = document.getElementById("cursor-dot");
-  document.addEventListener("mousemove",e=>{
-    dot.style.left=e.clientX+"px"; dot.style.top=e.clientY+"px";
-  });
+
 
   const obs = new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible");}),{threshold:0.12});
   document.querySelectorAll(".about-grid > *:first-child").forEach(el=>{el.classList.add("reveal-left");obs.observe(el);});
